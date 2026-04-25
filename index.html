@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMNI-KOR OS</title>
+    <style>
+        body { background-color: #050505; color: #00ffcc; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .omni-core { width: 100px; height: 100px; background: radial-gradient(circle, #00ffcc, #00332a); border-radius: 50%; box-shadow: 0 0 20px #00ffcc; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        h1 { font-size: 1.2rem; letter-spacing: 3px; margin-top: 20px; }
+        .console { width: 85%; max-width: 400px; background: #111; padding: 20px; border-radius: 15px; border: 1px solid #333; }
+        input { width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #00ffcc; background: transparent; color: #fff; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; border-radius: 8px; border: none; background: #00ffcc; color: #000; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="omni-core"></div>
+    <h1>OMNI-KOR OS</h1>
+    <div class="console">
+        <input type="text" id="userInput" placeholder="បញ្ជាមកកាន់ OMNI-KOR...">
+        <button onclick="run()">ប្រតិបត្តិការ</button>
+        <p id="out" style="font-size: 0.9rem; color: #888;"></p>
+    </div>
+    <script>
+        function run() {
+            const input = document.getElementById('userInput').value;
+            const out = document.getElementById('out');
+            if(input) {
+                out.innerText = "OMNI-KOR កំពុងភ្ជាប់ទៅកាន់ Global Brain... សូមរង់ចាំ...";
+                setTimeout(() => { out.innerText = "កំពុងវិភាគ: " + input; }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>
